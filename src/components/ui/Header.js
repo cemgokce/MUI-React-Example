@@ -73,6 +73,9 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "50px",
     marginRight: "15px",
     height: "45px",
+    "&:hover": {
+      backgroundColor: theme.palette.secondary.light
+    }
   },
   menu: {
     backgroundColor: theme.palette.common.blue,
@@ -156,7 +159,7 @@ function Header(props) {
   const menuOptions = [
     { name: "Services", link: "/services" },
     { name: "Custom Services", link: "/customservices" },
-    { name: "Mobile App Development", link: "/mobileapps" },
+    { name: "İOS/Android App Development", link: "/mobileapps" },
     { name: "Website Development", link: "/websites" },
   ];
 
@@ -221,6 +224,11 @@ function Header(props) {
           props.setValue(4);
         }
         break;
+        case "/estimate":
+        if (props.value !== 5) {
+          props.setValue(5);
+        }
+        break;
       default:
         break;
     }
@@ -264,7 +272,7 @@ function Header(props) {
           label="Contact Us"
         ></Tab>
       </Tabs>
-      <Button variant="contained" color="secondary" className={classes.button}>
+      <Button variant="contained" component={Link} to="estimate" color="secondary" className={classes.button} onClick={() => props.setValue(5)}>
         Free Estimate
       </Button>
       <Menu
