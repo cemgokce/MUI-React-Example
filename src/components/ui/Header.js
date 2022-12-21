@@ -158,7 +158,7 @@ function Header(props) {
 
   const menuOptions = [
     { name: "Services", link: "/services" },
-    { name: "Custom Services", link: "/customservices" },
+    { name: "Custom Services", link: "/customsoftware" },
     { name: "İOS/Android App Development", link: "/mobileapps" },
     { name: "Website Development", link: "/websites" },
   ];
